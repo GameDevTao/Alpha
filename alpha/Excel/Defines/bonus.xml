@@ -1,0 +1,9 @@
+<module name="bonus">
+
+	<bean name="DropInfo">
+		<var name="id" type="int"/>
+		<var name="desc" type="string"/>
+	</bean>
+	<table name="TbDrop" value="DropInfo" input="bonus/掉落表.xlsx"/>
+	
+</module>
