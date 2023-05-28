@@ -5,3 +5,6 @@ alpha/Temp
 alpha/UserSettings
 alpha/Tool
 .vsconfig
+alpha/Assembly-CSharp-Editor.csproj
+alpha/Assembly-CSharp.csproj
+alpha/obj
