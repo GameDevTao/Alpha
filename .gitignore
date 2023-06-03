@@ -9,3 +9,4 @@ alpha/Assembly-CSharp-Editor.csproj
 alpha/Assembly-CSharp.csproj
 alpha/obj
 alpha/.vs
+*.csproj

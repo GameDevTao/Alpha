@@ -1,9 +1,14 @@
-﻿G:/unity_project/Alpha/alpha/Assets/Setting/bonus/DropInfo.cs,F9964E215CD9356BA7E13ACD3145D58E,1618,1685291516410
-G:/unity_project/Alpha/alpha/Assets/Setting/bonus/TbDrop.cs,5CCEBBFC7855AEC2D02DE1F10C22656,1783,1685291516410
-G:/unity_project/Alpha/alpha/Assets/Setting/Tables.cs,6224D1BEB31ABEAA9AE6485421609C27,1035,1685291516412
+﻿G:/unity_project/Alpha/alpha/Assets/Setting/bonus/DropInfo.cs,F9964E215CD9356BA7E13ACD3145D58E,1618,1685808596134
+G:/unity_project/Alpha/alpha/Assets/Setting/bonus/TbDrop.cs,5CCEBBFC7855AEC2D02DE1F10C22656,1783,1685808596133
+G:/unity_project/Alpha/alpha/Assets/Setting/Tables.cs,A48FF0F02BF5B598CC27F02C90E2F5B2,1224,1685808596132
+G:/unity_project/Alpha/alpha/Assets/Setting/ui/TbUI.cs,F587D1ACF58416E9A2D1F754E8E090D4,1742,1685808596135
+G:/unity_project/Alpha/alpha/Assets/Setting/ui/UIInfo.cs,BAF86866FE685CA741C1914F323E4868,1826,1685808706789
 G:/unity_project/Alpha/alpha/Assets/Table/json/bonus_tbdrop.json,D3D59673DCB412E64F8B8D21063A7CD,121,1685291516410
+G:/unity_project/Alpha/alpha/Assets/Table/json/ui_tbui.json,11B75E6F69A791B954FD71D18A9854E6,85,1685808706790
 G:/unity_project/Alpha/alpha/Excel/Datas/__beans__.xlsx,A75B60FC7E1412183DF87EC73C52CF,8843,1685285237764
 G:/unity_project/Alpha/alpha/Excel/Datas/__enums__.xlsx,6817DDD4633F63F2C977118403250AC,8707,1685283669166
 G:/unity_project/Alpha/alpha/Excel/Datas/__tables__.xlsx,E566937C78018828E5E5E5A7C9B47BA,9332,1685285537830
 G:/unity_project/Alpha/alpha/Excel/Datas/bonus/掉落表.xlsx,E48B6AD1D424B51FBB55CDB4707865D6,13512,1683867377000
+G:/unity_project/Alpha/alpha/Excel/Datas/ui/ui表.xlsx,AFBAA8B878AA446688CEA149959BB2DB,12571,1685808675168
 G:/unity_project/Alpha/alpha/Excel/Defines/bonus.xml,F61611203499FB79AC79E9627AA6A29,202,1685287085673
+G:/unity_project/Alpha/alpha/Excel/Defines/ui.xml,97972252F5D9431C8D084647D14EF2,222,1685808701095

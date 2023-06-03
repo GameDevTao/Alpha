@@ -1,0 +1,10 @@
+<module name="ui">
+
+	<bean name="UIInfo">
+		<var name="id" type="string"/>
+		<var name="desc" type="string"/>
+		<var name="layer" type="int"/>
+	</bean>
+	<table name="TbUI" value="UIInfo" input="ui/ui表.xlsx"/>
+	
+</module>
