@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 系统属性
+/// 每帧更新接口LateUpdate
 /// </summary>
-public class RegisterSystem : Attribute
+public interface ILateUpdatable
 {
+    public void OnLateUpdate();
 }

@@ -22,11 +22,3 @@ public abstract class State
     /// </summary>
     public abstract void OnExit();
 }
-
-/// <summary>
-/// 状态机每帧更新接口
-/// </summary>
-public interface IUpdatable
-{
-    public void OnUpdate();
-}

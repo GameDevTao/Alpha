@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 系统属性
+/// 每帧更新接口FixedUpdate
 /// </summary>
-public class RegisterSystem : Attribute
+public interface IFixedUpdatable
 {
+    public void OnFixedUpdate();
 }

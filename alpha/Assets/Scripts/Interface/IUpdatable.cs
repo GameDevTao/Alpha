@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 系统属性
+/// 每帧更新接口IUpdate
 /// </summary>
-public class RegisterSystem : Attribute
+public interface IUpdatable
 {
+    public void OnUpdate();
 }
