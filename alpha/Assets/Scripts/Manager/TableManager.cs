@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// ±Ìπ‹¿Ì∆˜
 /// </summary>
-[RegisterSystem(Const.EInitPriority.Second)]
+[RegisterSystem(Const.EInitPriority.Table)]
 public class TableManager : SystemBase<TableManager>
 {
     public override void OnInit()

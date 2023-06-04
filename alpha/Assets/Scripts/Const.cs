@@ -12,7 +12,8 @@ public class Const
     /// </summary>
     public enum EInitPriority
     {
-        BaseUI = 1,
-        Second = 2,
+        UI = 1,    
+        Resource = 2,
+        Table = 3,
     }
 }

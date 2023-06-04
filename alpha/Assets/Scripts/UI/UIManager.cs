@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// uiπ‹¿Ì∆˜
 /// </summary>
-[RegisterSystem(Const.EInitPriority.BaseUI)]
+[RegisterSystem(Const.EInitPriority.UI)]
 public class UIManager : SystemBase<UIManager>, IUpdatable
 {
     public override void OnInit()

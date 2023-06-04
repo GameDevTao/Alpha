@@ -7,7 +7,7 @@ using System;
 /// <summary>
 /// ŸY‘¥π‹¿Ì∆˜
 /// </summary>
-[RegisterSystem(Const.EInitPriority.Second)]
+[RegisterSystem(Const.EInitPriority.Resource)]
 public class ResourceManager : SystemBase<ResourceManager>
 {
     public override void OnInit()
