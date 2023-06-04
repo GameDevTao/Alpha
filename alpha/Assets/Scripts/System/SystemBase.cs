@@ -7,17 +7,20 @@ using UnityEngine;
 /// </summary>
 public abstract class SystemBase<T> : SingletonBase<T> where T : new()
 {
-    /// <summary>
-    /// 是否再游戏引擎初始化后再初始化
-    /// </summary>
-    /// <returns></returns>
-    public virtual bool IsAfterGameEngineInit()
-    {
-        return true;
-    }
+    private bool m_IsInit;
+    public bool IsInit { get { return m_IsInit; } }
 
     /// <summary>
-    /// 初始化
+    //  初始化
+    /// </summary>
+    public void Init()
+    {
+        m_IsInit = true;
+
+        OnInit();
+    }
+    /// <summary>
+    /// 初始化回调
     /// </summary>
     public abstract void OnInit();
 

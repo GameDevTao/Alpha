@@ -8,4 +8,12 @@ using UnityEngine;
 /// </summary>
 public class RegisterSystem : Attribute
 {
+    /// <summary>
+    /// 系统初始化优先级
+    /// </summary>
+    public Const.EInitPriority Priority { get; set; }
+    public RegisterSystem(Const.EInitPriority priority)
+    {
+        Priority = priority;
+    }
 }

@@ -23,22 +23,33 @@ public class SystemManager : MonoBehaviour
         var classesWithAttribute = types.Where(t=>t.GetCustomAttribute<RegisterSystem>() != null);
         foreach (Type type in classesWithAttribute)
         {
-            var instance = (SystemBase<object>)Activator.CreateInstance(type);
-            m_AllSystem.Add(instance);
-            if (type is IUpdatable)
+            var sys = (SystemBase<object>)Activator.CreateInstance(type);
+            m_AllSystem.Add(sys);
+
+            var attr = type.GetCustomAttribute<RegisterSystem>();
+            if (attr.Priority == Const.EInitPriority.First)
             {
-                m_UpdatableSystem.Add((IUpdatable)instance);
-            }
-            if (type is ILateUpdatable)
-            {
-                m_LateUpdatableSystem.Add((ILateUpdatable)instance);
-            }
-            if (type is IFixedUpdatable)
-            {
-                m_FixedUpdatableSystem.Add((IFixedUpdatable)instance);
+                sys.Init();
+
+                RegisterUpdateSystem(sys);
             }
         }
-        OnInit();
+    }
+
+    private void RegisterUpdateSystem(SystemBase<object> sys)
+    {
+        if (sys is IFixedUpdatable)
+        {
+            m_FixedUpdatableSystem.Add((IFixedUpdatable)sys);
+        }
+        if (sys is IUpdatable)
+        {
+            m_UpdatableSystem.Add((IUpdatable)sys);
+        }
+        if (sys is ILateUpdatable)
+        {
+            m_LateUpdatableSystem.Add((ILateUpdatable)sys);
+        }
     }
 
     /// <summary>
@@ -75,44 +86,13 @@ public class SystemManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 初始化(不必在游戏引擎初始化后调用)
-    /// </summary>
-    public void OnInit()
-    {
-        foreach (var system in m_AllSystem)
-        {
-            if (!system.IsAfterGameEngineInit())
-            {
-                system.OnInit();
-            }
-        }
-    }
-
-    /// <summary>
-    /// 游戏引擎完成初始化时
-    /// </summary>
-    private void OnAfterGameEngineInit()
-    {
-        foreach (var system in m_AllSystem)
-        {
-            if (system.IsAfterGameEngineInit())
-            {
-                system.OnInit();
-            }
-        }
-    }
-
-    /// <summary>
     /// 重置
     /// </summary>
     private void OnReset()
     {
         foreach (var system in m_AllSystem)
         {
-            if (system.IsAfterGameEngineInit())
-            {
-                system.OnReset();
-            }
+            system.OnReset();
         }
     }
 }

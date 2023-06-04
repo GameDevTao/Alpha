@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ui管理器
+/// 表管理器
 /// </summary>
-[RegisterSystem(Const.EInitPriority.First)]
-public class UIManager : SystemBase<UIManager>, IUpdatable
+[RegisterSystem(Const.EInitPriority.Second)]
+public class TableManager : SystemBase<TableManager>
 {
     public override void OnInit()
     {
     }
 
     public override void OnReset()
-    {
-    }
-
-    public void OnUpdate()
     {
     }
 }
