@@ -7,18 +7,9 @@ using System;
 /// <summary>
 /// 資源管理器
 /// </summary>
-public class ResourceManager : MonoBehaviour
+[RegisterSystem]
+public class ResourceManager
 {
-    public static ResourceManager Instance;
-
-    private AssetBundleManager m_AssetBundleManager;
-    private void Awake()
-    {
-        Instance = this;
-
-        m_AssetBundleManager = gameObject.AddComponent<AssetBundleManager>();
-    }
-
     /// <summary>
     /// 异步加载资源(GC释放)
     /// </summary>
