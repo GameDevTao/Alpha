@@ -16,4 +16,8 @@ public class Const
         Resource = 2,
         Table = 3,
     }
+
+    public class UI
+    {
+    }
 }

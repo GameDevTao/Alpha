@@ -16,6 +16,14 @@ public class UIManager : SystemBase<UIManager>, IUpdatable
         GameObject.DontDestroyOnLoad(m_UIRoot);
     }
 
+    public void OpenUI(string ui)
+    {
+    }
+
+    public void CloseUI(string ui)
+    {
+    }
+
     public override void OnReset()
     {
     }
