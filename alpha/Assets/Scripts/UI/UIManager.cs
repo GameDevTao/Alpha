@@ -5,14 +5,6 @@ using UnityEngine;
 /// <summary>
 /// ui¹ÜÀíÆ÷
 /// </summary>
-public class UIManager : MonoBehaviour
+public class UIManager
 {
-    public void OpenUI(string ui)
-    {
-
-    }
-
-    public void CloseUI(string ui)
-    {
-    }
 }
