@@ -34,6 +34,27 @@ public class SystemManager : MonoBehaviour
                 RegisterUpdateSystem(sys);
             }
         }
+        StartCoroutine(OnFrameEnd());
+    }
+
+    IEnumerator OnFrameEnd()
+    {
+        yield return new WaitForEndOfFrame();
+
+        var values = Enum.GetValues(typeof(Const.EInitPriority));
+        foreach (var val in values)
+        {
+            foreach (var sys in m_AllSystem)
+            {
+                var attr = sys.GetType().GetCustomAttribute<RegisterSystem>();
+                if (attr.Priority == (Const.EInitPriority)val && attr.Priority != Const.EInitPriority.First)
+                {
+                    sys.Init();
+
+                    RegisterUpdateSystem(sys);
+                }
+            }
+        }
     }
 
     private void RegisterUpdateSystem(SystemBase<object> sys)
