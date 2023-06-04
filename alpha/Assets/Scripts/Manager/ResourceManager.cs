@@ -8,8 +8,16 @@ using System;
 /// 資源管理器
 /// </summary>
 [RegisterSystem]
-public class ResourceManager
+public class ResourceManager : SystemBase<ResourceManager>
 {
+    public override void OnInit()
+    {
+    }
+
+    public override void OnReset()
+    {
+    }
+
     /// <summary>
     /// 异步加载资源(GC释放)
     /// </summary>

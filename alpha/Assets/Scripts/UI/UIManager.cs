@@ -5,6 +5,18 @@ using UnityEngine;
 /// <summary>
 /// uiπ‹¿Ì∆˜
 /// </summary>
-public class UIManager
+[RegisterSystem]
+public class UIManager : SystemBase<UIManager>, IUpdatable
 {
+    public override void OnInit()
+    {
+    }
+
+    public override void OnReset()
+    {
+    }
+
+    public void OnUpdate()
+    {
+    }
 }

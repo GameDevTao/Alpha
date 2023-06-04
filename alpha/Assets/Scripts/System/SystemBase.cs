@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 系统基类
 /// </summary>
-public class SystemBase<T> : SingletonBase<T> where T : new()
+public abstract class SystemBase<T> : SingletonBase<T> where T : new()
 {
     /// <summary>
     /// 是否再游戏引擎初始化后再初始化
@@ -19,14 +19,10 @@ public class SystemBase<T> : SingletonBase<T> where T : new()
     /// <summary>
     /// 初始化
     /// </summary>
-    public virtual void OnInit()
-    {
-    }
+    public abstract void OnInit();
 
     /// <summary>
     /// 重置
     /// </summary>
-    public virtual void OnReset()
-    {
-    }
+    public abstract void OnReset();
 }
