@@ -10,6 +10,9 @@ public class UIManager : SystemBase<UIManager>, IUpdatable
 {
     public override void OnInit()
     {
+        //test
+        Logger.Error("error");
+        //test
     }
 
     public override void OnReset()

@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class SystemManager : MonoBehaviour
 {
-    private List<SystemBase<object>> m_AllSystem = new List<SystemBase<object>>();
+    private List<object> m_AllSystem = new List<object>();
 
     private List<IUpdatable> m_UpdatableSystem = new List<IUpdatable>();
     private List<ILateUpdatable> m_LateUpdatableSystem = new List<ILateUpdatable>();
@@ -23,13 +23,13 @@ public class SystemManager : MonoBehaviour
         var classesWithAttribute = types.Where(t=>t.GetCustomAttribute<RegisterSystem>() != null);
         foreach (Type type in classesWithAttribute)
         {
-            var sys = (SystemBase<object>)Activator.CreateInstance(type);
+            var sys = Activator.CreateInstance(type);
             m_AllSystem.Add(sys);
 
             var attr = type.GetCustomAttribute<RegisterSystem>();
             if (attr.Priority == Const.EInitPriority.First)
             {
-                sys.Init();
+                ((IIntialize)sys).Init();
 
                 RegisterUpdateSystem(sys);
             }
@@ -49,7 +49,7 @@ public class SystemManager : MonoBehaviour
                 var attr = sys.GetType().GetCustomAttribute<RegisterSystem>();
                 if (attr.Priority == (Const.EInitPriority)val && attr.Priority != Const.EInitPriority.First)
                 {
-                    sys.Init();
+                    ((IIntialize)sys).Init();
 
                     RegisterUpdateSystem(sys);
                 }
@@ -57,7 +57,7 @@ public class SystemManager : MonoBehaviour
         }
     }
 
-    private void RegisterUpdateSystem(SystemBase<object> sys)
+    private void RegisterUpdateSystem(object sys)
     {
         if (sys is IFixedUpdatable)
         {
@@ -111,9 +111,9 @@ public class SystemManager : MonoBehaviour
     /// </summary>
     private void OnReset()
     {
-        foreach (var system in m_AllSystem)
+        foreach (var sys in m_AllSystem)
         {
-            system.OnReset();
+            ((IResetable)sys).OnReset();
         }
     }
 }

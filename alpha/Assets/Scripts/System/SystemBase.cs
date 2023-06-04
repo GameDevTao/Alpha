@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 系统基类
 /// </summary>
-public abstract class SystemBase<T> : SingletonBase<T> where T : new()
+public abstract class SystemBase<T> : SingletonBase<T>, IIntialize, IResetable where T : new()
 {
     private bool m_IsInit;
     public bool IsInit { get { return m_IsInit; } }
