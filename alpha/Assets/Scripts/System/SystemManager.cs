@@ -27,7 +27,7 @@ public class SystemManager : MonoBehaviour
             m_AllSystem.Add(sys);
 
             var attr = type.GetCustomAttribute<RegisterSystem>();
-            if (attr.Priority == Const.EInitPriority.First)
+            if (attr.Priority == Const.EInitPriority.BaseUI)
             {
                 ((IIntialize)sys).Init();
 
@@ -47,7 +47,7 @@ public class SystemManager : MonoBehaviour
             foreach (var sys in m_AllSystem)
             {
                 var attr = sys.GetType().GetCustomAttribute<RegisterSystem>();
-                if (attr.Priority == (Const.EInitPriority)val && attr.Priority != Const.EInitPriority.First)
+                if (attr.Priority == (Const.EInitPriority)val && attr.Priority != Const.EInitPriority.BaseUI)
                 {
                     ((IIntialize)sys).Init();
 
