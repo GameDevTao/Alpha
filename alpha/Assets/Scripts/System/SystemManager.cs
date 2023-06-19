@@ -10,6 +10,13 @@ using UnityEngine;
 /// </summary>
 public class SystemManager : MonoBehaviour
 {
+    private List<Type> m_Types = new List<Type>()
+    {
+        typeof(ResourceManager),
+        typeof(TableManager),
+        typeof(UIManager)
+    };
+
     private List<object> m_AllSystem = new List<object>();
 
     private List<IUpdatable> m_UpdatableSystem = new List<IUpdatable>();
@@ -18,10 +25,7 @@ public class SystemManager : MonoBehaviour
 
     private void Awake()
     {
-        var assembly = Assembly.GetExecutingAssembly();
-        var types = assembly.GetTypes();
-        var classesWithAttribute = types.Where(t=>t.GetCustomAttribute<RegisterSystem>() != null);
-        foreach (Type type in classesWithAttribute)
+        foreach (Type type in m_Types)
         {
             var sys = Activator.CreateInstance(type);
             m_AllSystem.Add(sys);
