@@ -20,7 +20,7 @@ public class TableManager : SystemBase<TableManager>
 
     private static JSONNode LoadByteBuf(string file)
     {
-        return JSON.Parse(File.ReadAllText(Application.dataPath + "/../../GenerateDatas/json/" + file + ".json", System.Text.Encoding.UTF8));
+        return JSON.Parse(File.ReadAllText(Application.dataPath + "/Table/json/" + file + ".json", System.Text.Encoding.UTF8));
     }
 
 

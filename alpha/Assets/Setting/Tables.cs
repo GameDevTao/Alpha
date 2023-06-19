@@ -14,26 +14,21 @@ namespace cfg
    
 public sealed partial class Tables
 {
-    public bonus.TbDrop TbDrop {get; }
     public ui.TbUI TbUI {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
-        TbDrop = new bonus.TbDrop(loader("bonus_tbdrop")); 
-        tables.Add("bonus.TbDrop", TbDrop);
         TbUI = new ui.TbUI(loader("ui_tbui")); 
         tables.Add("ui.TbUI", TbUI);
         PostInit();
 
-        TbDrop.Resolve(tables); 
         TbUI.Resolve(tables); 
         PostResolve();
     }
 
     public void TranslateText(System.Func<string, string, string> translator)
     {
-        TbDrop.TranslateText(translator); 
         TbUI.TranslateText(translator); 
     }
     
