@@ -6,21 +6,27 @@ using System.IO;
 using UnityEngine;
 
 /// <summary>
-/// ±í¹ÜÀíÆ÷
+/// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 [RegisterSystem(Const.EInitPriority.Table)]
 public class TableManager : SystemBase<TableManager>
 {
+    public cfg.Tables Tables;
+
     public override void OnInit()
     {
-        var tables = new cfg.Tables(LoadByteBuf);
+        Tables = new cfg.Tables(LoadByteBuf);
 
         //UnityEngine.Debug.LogFormat("item[1].name:{0}", tables.TbUI["LogoUI"].Layer);
     }
 
     private static JSONNode LoadByteBuf(string file)
     {
+#if UNITY_EDITOR
         return JSON.Parse(File.ReadAllText(Application.dataPath + "/Table/json/" + file + ".json", System.Text.Encoding.UTF8));
+#else
+        return null;
+#endif
     }
 
 

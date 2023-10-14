@@ -17,7 +17,8 @@ public class Const
         Table = 3,
     }
 
-    public class UI
+    public static class UI
     {
+        public static string Loading = "Loading";
     }
 }
