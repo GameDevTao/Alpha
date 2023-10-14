@@ -7,13 +7,13 @@ namespace AssetBundleSystem
 {
     public class AssetBundleBuildPanel : EditorWindow
     {
-        [MenuItem("Package/AssetBundleUtility/Builder Panel")]
+        [MenuItem("Package/ABTool/Builder Panel")]
         static void Open()
         {
             GetWindow<AssetBundleBuildPanel>("AssetBundleUtility", true);
         }
 
-        [MenuItem("Package/AssetBundleUtility/Builde AssetBundles")]
+        [MenuItem("Package/ABTool/Builde AssetBundles")]
         static void BuildAssetBundles()
         {
             AssetBundleBuildConfig config = LoadAssetAtPath<AssetBundleBuildConfig>(savePath);
