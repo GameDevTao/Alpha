@@ -19,6 +19,7 @@ namespace FancyScrollView.Example05
         [SerializeField] Button button = default;
         [SerializeField] RectTransform rectTransform = default;
         [SerializeField, HideInInspector] Vector3 position = default;
+        [SerializeField] Button buttonEnter = default;
 
         static class AnimatorHash
         {
@@ -65,6 +66,7 @@ namespace FancyScrollView.Example05
         {
             message.text = cellData.Message;
             SetSelection(Context.SelectedIndex == Index);
+            buttonEnter.onClick.AddListener(()=>cellData?.Callback());
         }
 
         public override void UpdatePosition(float position)

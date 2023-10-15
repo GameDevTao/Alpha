@@ -4,15 +4,19 @@
  * Licensed under MIT (https://github.com/setchi/FancyScrollView/blob/master/LICENSE)
  */
 
+using System;
+
 namespace FancyScrollView.Example05
 {
     class ItemData
     {
         public string Message { get; }
+        public Action Callback;
 
-        public ItemData(string message)
+        public ItemData(string message, Action callback = null)
         {
             Message = message;
+            Callback = callback;
         }
     }
 }
