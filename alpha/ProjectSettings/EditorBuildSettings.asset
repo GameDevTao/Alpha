@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AdBootScene.unity
+    path: Assets/Art/Scene/Boot.unity
+    guid: 5fd17f8d5ca9e1048b6318dba8f065ae
+  - enabled: 1
+    path: Assets/Art/Scene/PrivacyScene.unity
     guid: 9b6f4db65342e28458fc2e233614f511
+  - enabled: 1
+    path: Assets/Art/Scene/LoadingScene.unity
+    guid: 77890c698c344664d83e10b80e5ac61e
+  - enabled: 1
+    path: Assets/FancyScrollView/Examples/MenuScene.unity
+    guid: 9f4081131e0754ae184f905e3d995a98
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
