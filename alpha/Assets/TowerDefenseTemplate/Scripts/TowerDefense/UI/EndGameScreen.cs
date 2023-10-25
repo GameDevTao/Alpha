@@ -47,7 +47,7 @@ namespace TowerDefense.UI
 		/// <summary>
 		/// Name of level select screen
 		/// </summary>
-		public string menuSceneName = "MainMenu";
+		public string menuSceneName = "MenuScene";
 
 		/// <summary>
 		/// Text to be displayed on popup
@@ -67,6 +67,9 @@ namespace TowerDefense.UI
 		public Color winBackgroundColor;
 		
 		public Color loseBackgroundColor;
+
+		public GameObject GoGameOver;
+		public GameObject GoVictory;
 
 		/// <summary>
 		/// The Canvas that holds the button to go to the next level
@@ -157,16 +160,18 @@ namespace TowerDefense.UI
 
 			int score = CalculateFinalScore();
 			scorePanel.SetStars(score);
+			GoGameOver.SetActive(score <= 0);
+			GoVictory.SetActive(score > 0);
 			if (level != null) 
 			{
-				endGameMessageText.text = string.Format (endResultText, level.name.ToUpper ());
+				//endGameMessageText.text = string.Format (endResultText, level.name.ToUpper ());
 				GameManager.instance.CompleteLevel (level.id, score);
 			} 
 			else 
 			{
 				// If the level is not in LevelList, we should just use the name of the scene. This will not store the level's score.
 				string levelName = SceneManager.GetActiveScene ().name;
-				endGameMessageText.text = string.Format (endResultText, levelName.ToUpper ());
+				//endGameMessageText.text = string.Format (endResultText, levelName.ToUpper ());
 			}
 
 

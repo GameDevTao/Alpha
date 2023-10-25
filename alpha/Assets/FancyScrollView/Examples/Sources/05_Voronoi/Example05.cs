@@ -39,7 +39,7 @@ namespace FancyScrollView.Example05
                 var num = i + 1;
                 var itemData = new ItemData($"Level {num}", () =>
                 {
-                    SceneManager.LoadScene("Level1_New");
+                    SceneManager.LoadScene($"Level{num}_New");
                 });
                 items.Add(itemData);
             }
