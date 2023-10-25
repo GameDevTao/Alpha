@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FancyScrollView/Examples/MenuScene.unity
     guid: 9f4081131e0754ae184f905e3d995a98
+  - enabled: 1
+    path: Assets/TowerDefenseTemplate/Scenes/Levels/Level1_New/Level1_New.unity
+    guid: c2269f0fcafc49c40ba59fc06fd8088c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
